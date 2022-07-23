@@ -10,6 +10,9 @@ import { PoliciesComponent } from './pages/policies/policies.component';
 const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'Home',component:HomeComponent},
+  {path:'Login',component:LoginComponent},
+  {path:'Plans',component:PlansComponent},
+  {path:'Politics',component:PoliciesComponent},
 ];
 
 @NgModule({

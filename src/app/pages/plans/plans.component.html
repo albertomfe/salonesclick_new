@@ -1,1 +1,94 @@
-<p>plans works!</p>
+<div class='loader' *ngIf="carga_pagina"> 
+    <div class='container_loader'>
+        <div class='ring'></div>
+        <div class='ring'></div>
+        <div class='ring'></div>
+        <p>...Cargando...</p>
+    </div>
+</div>
+
+
+<!-- cargar contenido -->
+<div class="container-fluid" *ngIf="!carga_pagina" id="contenedor_principal">
+
+   <app-nav></app-nav>
+
+
+   <!-- WELCOME -->
+   <div class="row mt-5">
+        <div class="col-md-12">
+                    <div class="jumbotron">                        
+                        <div class="col-md-12 h400 bg-plans"></div>
+                                           
+                        <hr class="my-4">   
+
+                      
+                        <div class="plans row ">
+
+                            <div class="col-md-3">
+                                <div class="plan  ">
+                                    <h3 class="plan-title">COPPER</h3>
+                                    <p class="plan-price">$99.99 <span class="plan-unit">per month</span></p>
+                                    <ul class="plan-features">
+                                      <li class="plan-feature">2 <span class="plan-feature-name">websites</span></li>
+                                      <li class="plan-feature">5<span class="plan-feature-unit">GB</span> <span class="plan-feature-name">storage</span></li>
+                                      <li class="plan-feature">3 <span class="plan-feature-name">users</span></li>
+                                    </ul>
+                                    <button type="button" class="btn-neon btn-smp mt-5">SELECCIONAR</button>
+                                </div>
+                            </div>
+                          
+                            <div class="col-md-3">
+                                <div class="plan ">
+                                <p class="plan-recommended">Seleccionado</p>
+                                <h3 class="plan-title">Silver</h3>
+                                <p class="plan-price">$149.00 <span class="plan-unit">per month</span></p>
+                                <ul class="plan-features">
+                                    <li class="plan-feature">5 <span class="plan-feature-name">websites</span></li>
+                                    <li class="plan-feature">20<span class="plan-feature-unit">GB</span> <span class="plan-feature-name">storage</span></li>
+                                    <li class="plan-feature">10 <span class="plan-feature-name">users</span></li>
+                                </ul>
+                                    <button type="button" class="btn-neon btn-smp mt-5">SELECCIONAR</button>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="plan ">
+                                <h3 class="plan-title">Golden</h3>
+                                <p class="plan-price">$229.00 <span class="plan-unit">per month</span></p>
+                                <ul class="plan-features">
+                                    <li class="plan-feature">5 <span class="plan-feature-name">websites</span></li>
+                                    <li class="plan-feature">20<span class="plan-feature-unit">GB</span> <span class="plan-feature-name">storage</span></li>
+                                    <li class="plan-feature">10 <span class="plan-feature-name">users</span></li>
+                                </ul>
+                                    <button type="button" class="btn-neon btn-smp mt-5">SELECCIONAR</button>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-3">
+                                <div class="plan ">
+                                <h3 class="plan-title">Diamond</h3>
+                                <p class="plan-price">$349.00 <span class="plan-unit">per month</span></p>
+                                <ul class="plan-features">
+                                    <li class="plan-feature">5 <span class="plan-feature-name">websites</span></li>
+                                    <li class="plan-feature">20<span class="plan-feature-unit">GB</span> <span class="plan-feature-name">storage</span></li>
+                                    <li class="plan-feature">10 <span class="plan-feature-name">users</span></li>
+                                </ul>
+                                    <button type="button" class="btn-neon btn-smp mt-5">SELECCIONAR</button>
+                                </div>
+                            </div>
+
+                        
+
+
+                        </div>
+                        
+                         
+
+                
+                       
+                </div>
+            </div>   
+        </div>
+    </div>

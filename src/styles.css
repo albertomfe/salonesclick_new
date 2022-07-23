@@ -884,6 +884,24 @@ header{
     background-repeat: no-repeat;
     background-size: contain;   
 }
+.bg-right3{
+    background-color: none!important;
+    background: url('/assets/fondos/fondo3.png') no-repeat center center;
+    background-repeat: no-repeat;
+    background-size: contain;   
+}
+.bg-right4{
+    background-color: none!important;
+    background: url('/assets/fondos/fondo4.png') no-repeat center center;
+    background-repeat: no-repeat;
+    background-size: contain;   
+}
+.bg-right5{
+    background-color: none!important;
+    background: url('/assets/fondos/fondo5.png') no-repeat center center;
+    background-repeat: no-repeat;
+    background-size: contain;   
+}
 
 .btn-smp{
     margin-top:-5px!important;
@@ -907,6 +925,8 @@ input.form-control{
     color: rgb(216, 216, 216)!important;
 }
 
+
+
 @media only screen and (max-width: 600px) {
 
     .form-inline .form-group{
@@ -918,3 +938,13 @@ input.form-control{
     }
 
 }
+
+
+
+::-webkit-datetime-edit { padding: 1em; }
+::-webkit-datetime-edit-fields-wrapper { background: transparent; }
+::-webkit-datetime-edit-text { color: rgb(37, 36, 36); padding: 0 0.3em; }
+::-webkit-datetime-edit-month-field { color: rgb(216, 216, 216); }
+::-webkit-datetime-edit-day-field { color: rgb(216, 216, 216); }
+::-webkit-datetime-edit-year-field { color: rgb(216, 216, 216); }
+::-webkit-inner-spin-button { display: none; }
