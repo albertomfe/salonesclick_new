@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlansComponent implements OnInit {
 
-  constructor() { }
+  public carga_pagina:boolean;
+
+  constructor() {
+    this.carga_pagina=true;
+    this.efecto_carga();
+   }
 
   ngOnInit(): void {
   }
+
+
+  efecto_carga()
+  {
+    setTimeout(() => {
+      this.carga_pagina=false;
+    }, 1000);
+  }
+
 
 }
