@@ -1,0 +1,43 @@
+<div class='loader' *ngIf="carga_pagina"> 
+    <div class='container_loader'>
+        <div class='ring'></div>
+        <div class='ring'></div>
+        <div class='ring'></div>
+        <p>...Cargando...</p>
+    </div>
+</div>
+
+
+<!-- cargar contenido -->
+<div class="container-fluid " *ngIf="!carga_pagina" id="contenedor_principal">
+
+   <app-nav></app-nav>
+
+
+   <!-- WELCOME -->
+   <div class="row ">
+        <div class="col-md-12">
+                 
+            
+            <div class='row p-5'>
+                <div class="jumbotron fondo_oscuro_traslucido">
+                    <h3 class="display-5">NOSOTROS</h3>
+                    <hr class="my-4">
+                    <p>
+                        <strong>Salones Click,</strong> es una empresa Mexicana dedicada al servicio de salones de eventos, siendo así intermediarios directos entre los usuarios y dueños de salones, donde por medio de nuestra plataforma digital, 
+                        podrás encontrar miles de opciones para organizar tus eventos asi como encontrar los servicios necesarios para el mismo.
+                    </p>
+                 
+        
+                </div>
+            </div>
+                 
+           
+        </div>  
+      
+
+    </div>
+</div>
+  
+<!-- FOOTER -->
+<app-footer></app-footer>

@@ -25,6 +25,14 @@ body{
     overflow-x: hidden;
 }
 
+.logo_card{
+    width: 250px;
+}
+.subtitulo_card{
+    display: block;
+    color:rgb(141, 141, 141);
+}
+
 .bg_transparent{
     background: none!important;
 }
@@ -596,7 +604,7 @@ a[href]
     background:var(--dark-background-body);
 }
 .loader{
-   /* background: #242424;*/
+    background:rgb(36, 36, 36);
     /*z-index: 99999999;*/
     width: 100%;
     position: absolute;
@@ -644,12 +652,13 @@ a[href]
     right: 12px;
     border-radius: 50%;
     width: 15px;
-    height: 15px;background-color:#ffc400;
-    box-shadow: 0 0 0 5px #f7c760,
-    0 0 0 10px #f3e746,
-    0 0 0 20px #f3cf30,
+    height: 15px;background-color:#5b9fec;
+    box-shadow: 0 0 0 5px #6077f7,
+    0 0 0 10px #5746f3,
+    0 0 0 20px #190a97,
     0 0 30px #24ecff11,
     0 0 50px #24ecff11;
+    
 }
 
 .container_loader .ring:nth-child(3)/*indica el nodo sobreel cual trabajara*/
@@ -661,7 +670,7 @@ a[href]
 .container_loader p
 {
     position:absolute;
-    color:var(--background-sidebar);
+    color:#eee!important;
     font-size: 1.5em;
     font-family: consolas;
     bottom: -80px ;
