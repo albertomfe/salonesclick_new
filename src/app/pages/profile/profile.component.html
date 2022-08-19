@@ -1,0 +1,100 @@
+
+    <div class='loader' *ngIf="carga_pagina"> 
+        <div class='container_loader'>
+            <div class='ring'></div>
+            <div class='ring'></div>
+            <div class='ring'></div>
+            <p >...Cargando...</p>
+        </div>
+    </div>
+
+
+    <!-- cargar contenido -->
+    <div class="container-fluid" *ngIf="!carga_pagina" id="contenedor_principal">
+
+       <app-nav></app-nav>
+
+
+       <!-- WELCOME -->
+       <div class="row mt-5">
+            <div class="col-md-6">
+                    <div class="jumbotron">
+                        <h1 class="display-4">Manuel Flores</h1>
+                        <p class="lead">Bienvenido,Nos da gusto Saludarte, Aqui tienes tu informaciòn puedes actualizarla en cualquier momento .</p>
+                       
+                        <hr class="my-4">   
+
+                      
+                         
+                            <div class="card">
+                                <div class="card-body">
+                    
+                                  <form>
+                                    <div class="form-group">
+                                      <label for="c_nombre">Nombre</label>
+                                      <input type="text" class="form-control" id="c_nombre" [(ngModel)]="nombre" name="nombre">
+                                    </div>
+                    
+                                    <div class="form-group">
+                                      <label for="c_nombre">Apellidos</label>
+                                      <input type="text" class="form-control" id="c_apellido" [(ngModel)]="apellido" name="apellido">
+                                    </div>
+                    
+                                    <div class="form-group">
+                                      <label for="c_email">Email</label>
+                                      <input type="email" readonly="readonly" class="form-control" id="c_email" [(ngModel)]="mail" name="mail" >
+                                    </div>
+                    
+                    
+                                    <button type="button" (click)="cambiar_datos()" class="btn-neon btn-smp">Guardar</button>
+                                  </form>
+                    
+                    
+                                  <div class='col-md-12 mt-2'>
+                                    <div *ngIf="msg_error!='' " class="alert alert-danger col-md-12" role="alert">
+                                      {{msg_error}}
+                                    </div>
+                                    <div *ngIf="msg_success!='' " class="alert alert-success col-md-12" role="alert">
+                                      {{msg_success}}
+                                    </div>
+                                  </div>
+                    
+                    
+                                </div>
+                    
+                            </div>
+
+                        
+                  </div>
+            </div>
+            <div class="col-md-6 h400 bg-right">
+                
+            </div>
+       </div>
+
+
+       
+
+
+
+
+
+        <div class="row mt-5">  
+            <div class="col-md-6 h400 bg-left">
+                
+            </div> 
+            <div class="col-md-6 ">
+                listado de registros
+            </div> 
+           
+        </div>
+
+
+
+
+
+        
+          
+    </div>
+    <!-- FOOTER -->
+    <app-footer *ngIf="!carga_pagina"></app-footer>

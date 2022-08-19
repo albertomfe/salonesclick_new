@@ -20,6 +20,9 @@ import { NofoundComponent } from './pages/nofound/nofound.component';
 import { FooterComponent } from './pages/footer/footer.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { RecoveryComponent } from './pages/recovery/recovery.component';
+import { SalonsComponent } from './pages/salons/salons.component';
+import { SalonsDetailComponent } from './pages/salons-detail/salons-detail.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 
 @NgModule({
@@ -35,7 +38,10 @@ import { RecoveryComponent } from './pages/recovery/recovery.component';
     NofoundComponent,
     FooterComponent,
     RegisterComponent,
-    RecoveryComponent
+    RecoveryComponent,
+    SalonsComponent,
+    SalonsDetailComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
