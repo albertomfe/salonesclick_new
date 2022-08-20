@@ -19,7 +19,7 @@
        <div class="row mt-5">
             <div class="col-md-6">
                     <div class="jumbotron">
-                        <h1 class="display-4">Manuel Flores</h1>
+                        <h1 class="display-4">CAMBIA TU INFORMACIÒN</h1>
                         <p class="lead">Bienvenido,Nos da gusto Saludarte, Aqui tienes tu informaciòn puedes actualizarla en cualquier momento .</p>
                        
                         <hr class="my-4">   
@@ -46,7 +46,7 @@
                                     </div>
                     
                     
-                                    <button type="button" (click)="cambiar_datos()" class="btn-neon btn-smp">Guardar</button>
+                                    <button type="button" (click)="cambiar_datos()" class="btn-neon btn-smp btn-block">Guardar</button>
                                   </form>
                     
                     
@@ -79,16 +79,107 @@
 
 
 
-        <div class="row mt-5">  
-            <div class="col-md-6 h400 bg-left">
-                
-            </div> 
+      <div class="row mt-5">  
+
+
+            <div class="col-md-6 h400 bg-left"></div> 
+
+
             <div class="col-md-6 ">
-                listado de registros
+              <div class="jumbotron">
+                <h1 class="display-4">CAMBIAR PASSWORD</h1>
+                <p class="lead">Aqui, puedes cambiar tu contraseña de acceso a la plataforma,
+                  Introduzca una contraseña con numeros letras y caracteres para mayor seguridad. 
+                </p>
+              
+                <hr class="my-4">   
+
+          
+            
+                  <div class="card">
+                    <div class="card-body">
+        
+                                
+                        <form>
+                          <div class="form-group">
+                            <label for="c_old_password">Antiguo Password</label>
+                            <input type="password" class="form-control" id="c_old_password" [(ngModel)]="passOld" name="passOld">
+                          </div>
+          
+                          <div class="form-group">
+                            <label for="c_new_password">Nuevo Password</label>
+                            <input type="password" class="form-control" id="c_new_password"  [(ngModel)]="passNew" name="passNew">
+                          </div>
+          
+                          <div class="form-group">
+                            <label for="c_confirm_password">Confirma Password</label>
+                            <input type="password" class="form-control" id="c_confirm_password" [(ngModel)]="passConfirm" name="passConfirm" >
+                          </div>
+          
+                          <button type="button" (click)="cambiar_password()" class="btn-neon btn-smp btn-block">Guardar</button>
+                      </form>
+        
+                      <div class='col-md-12 mt-2'>
+                        <div *ngIf="msg_error_pass!='' " class="alert alert-danger col-md-12" role="alert">
+                          {{msg_error_pass}}
+                        </div>
+                        <div *ngIf="msg_success_pass!='' " class="alert alert-success col-md-12" role="alert">
+                          {{msg_success_pass}}
+                        </div>
+                      </div>
+        
+                    </div>
+        
+                </div>
+
+            
+              </div>
             </div> 
            
-        </div>
+      </div><!--row mt5-->
 
+
+
+
+  
+
+      <!-- REGISTRO DE ACTIVIDAD -->
+      <!-- WELCOME -->
+      <div class="row mt-5">
+        <div class="col-md-6">
+                <div class="jumbotron">
+                  <h1 class="display-4">REGISTRO DE ACTIVIDAD</h1>
+                  <p class="lead">Aquì puedes ver las ultimas ubicaciones donde iniciaste sesiòn </p>
+                  
+                  <hr class="my-4">   
+
+                
+                    
+                  <div class="card">
+                      <div class="card-body">
+                        
+
+                        <ul class="list-unstyled">
+                          <li class="media my-4" *ngFor="let item of sessions;  let i = index;">
+                            <div class="media-body">
+                              <h5 class="mt-0 mb-1">{{item['sistema_operativo']}} </h5>
+                              <p> {{item['ip']}}   {{item['navegador']}} </p>
+                              <p> {{item['fecha']}}   </p>
+                              <hr class='hr' />
+                            </div>
+                          </li>
+                        </ul>
+                                        
+                      </div>
+          
+                  </div>
+
+              </div>
+        </div>
+        <div class="col-md-6 h400 bg-right2">
+            
+        </div>
+   </div>
 
 
 

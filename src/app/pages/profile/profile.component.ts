@@ -24,7 +24,8 @@ export class ProfileComponent implements OnInit {
   public apellido:string;
   public mail:string;
   public imagen:string;
-
+  private id:number;
+  
   /*localstorage*/
   public acceso:boolean;
   public user_login;
@@ -139,6 +140,116 @@ export class ProfileComponent implements OnInit {
       this.acceso=false;
     }
   }
+
+
+
+
+  getIdUser(token)
+  {
+    //request
+    this._AuthService.getUser(token).subscribe(
+      resultado=>{
+        //console.log(resultado['items']['result']);
+        this.id=resultado['items']['result']||0;
+        this.obtener_sesiones();
+      },
+      error=>{}
+    );
+  }
+
+
+    
+    cambiar_datos()
+    {
+      if(this.nombre=="" || this.apellido=="" || this.mail=="" || this.id==0)
+      {
+        //Efecto de Carga
+        this.msg_error=' Capture el Password Porfavor ';
+        this.msg_success='';
+
+        this.desvanecer_alerta();
+        return 0;
+      }
+      else
+      {
+        //request
+        this._AuthService.changeData(this.nombre,this.apellido,this.mail,this.id).subscribe(
+          resultado=>{
+            this.msg_success="Los Datos se Actualizaron Correctamente";
+            this.msg_error="";
+            this.desvanecer_alerta();
+          },
+          error=>{
+            this.msg_error="Error de Actualización";
+            this.msg_success="";
+            this.desvanecer_alerta();
+          }
+        );
+      }
+    }
+
+
+
+    
+    cambiar_password()
+    {
+
+      if(this.passNew.length<=5 || this.passConfirm.length<=5 ){
+        //Efecto de Carga
+        this.msg_error_pass=' Las contraseñas deben contener mas de 5 caracteres ';
+        this.msg_success_pass='';
+        this.desvanecer_alerta();
+        return 0;
+      }
+
+      if(this.passOld=="" || this.passNew=="" || this.passConfirm=="" || this.id==0)
+      {
+        //Efecto de Carga
+        this.msg_error_pass=' Capture los Password Porfavor ';
+        this.msg_success_pass='';
+        this.desvanecer_alerta();
+        return 0;
+      }
+      else
+      {
+        //request
+        this._AuthService.changePass(this.passOld,this.passNew,this.passConfirm,this.id).subscribe(
+          resultado=>{
+            this.msg_success_pass="La Contraseña se Actualizo Correctamente";
+            this.msg_error_pass="";
+            this.desvanecer_alerta();
+            this.passOld="";
+            this.passNew="";
+            this.passConfirm="";
+          },
+          error=>{
+            this.msg_error_pass="Error de Actualización";
+            this.msg_success_pass="";
+            this.desvanecer_alerta();
+            this.passNew="";
+            this.passConfirm="";
+          }
+        );
+      }
+    }
+
+
+
+
+    obtener_sesiones()
+    {
+        //request
+        this._AuthService.getSesions(this.id).subscribe(
+          resultado=>{
+            this.sessions=resultado['items']['result'];
+          },
+          error=>{
+            this.sessions=[];
+          }
+        );
+
+    }
+
 
 
 }

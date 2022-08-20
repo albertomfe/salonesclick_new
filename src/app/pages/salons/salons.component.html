@@ -1,1 +1,242 @@
-<p>salons works!</p>
+
+    <div class='loader' *ngIf="carga_pagina"> 
+        <div class='container_loader'>
+            <div class='ring'></div>
+            <div class='ring'></div>
+            <div class='ring'></div>
+            <p >...Cargando...</p>
+        </div>
+    </div>
+
+
+    <!-- cargar contenido -->
+    <div class="container-fluid" *ngIf="!carga_pagina" id="contenedor_principal">
+
+       <app-nav></app-nav>
+
+
+       <!-- WELCOME -->
+       <div class="row">
+
+            <div class="col-md-12">
+                    <div class="jumbotron">
+                        <div class="display-4 text-center">
+                            <img class='logo_principal' src="../../../assets/logo.png">
+                        </div>
+                                      
+                        
+                        <!--Places Holders-->
+                        <div class="row pl3" *ngIf="placeholder">
+                           
+                            <!--carga real-->
+
+                           <div class="col-lg-3 col-sm-6 mt-5">
+                                <div class="card text-center" >
+                                        <div class="img_placeholder"></div>
+
+                                        <div class="card-body p0">
+                                            <div class="card-title-placeholder"></div>
+                                            <div class="card-stars-placeholder"></div>
+                                            <div class="card-capacity-placeholder"></div>
+                                            <div class="card-stars-placeholder"></div>
+                                            <div class="card-price-placeholdero"></div>
+                                            <div class="card-button-placeholdero"> </div>
+                                    </div>
+                                </div>
+                           </div>
+
+                           <div class="col-lg-3 col-sm-6 mt-5">
+                                <div class="card text-center" >
+                                        <div class="img_placeholder"></div>
+
+                                        <div class="card-body p0">
+                                            <div class="card-title-placeholder"></div>
+                                            <div class="card-stars-placeholder"></div>
+                                            <div class="card-capacity-placeholder"></div>
+                                            <div class="card-stars-placeholder"></div>
+                                            <div class="card-price-placeholdero"></div>
+                                            <div class="card-button-placeholdero"> </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-sm-6 mt-5">
+                                <div class="card text-center" >
+                                        <div class="img_placeholder"></div>
+
+                                        <div class="card-body p0">
+                                            <div class="card-title-placeholder"></div>
+                                            <div class="card-stars-placeholder"></div>
+                                            <div class="card-capacity-placeholder"></div>
+                                            <div class="card-stars-placeholder"></div>
+                                            <div class="card-price-placeholdero"></div>
+                                            <div class="card-button-placeholdero"> </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-lg-3 col-sm-6 mt-5">
+                                <div class="card text-center" >
+                                        <div class="img_placeholder"></div>
+
+                                        <div class="card-body p0">
+                                            <div class="card-title-placeholder"></div>
+                                            <div class="card-stars-placeholder"></div>
+                                            <div class="card-capacity-placeholder"></div>
+                                            <div class="card-stars-placeholder"></div>
+                                            <div class="card-price-placeholdero"></div>
+                                            <div class="card-button-placeholdero"> </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+
+
+
+                        <div class="row pl3" *ngIf="!placeholder" >
+                           
+                            <!--carga real-->
+
+                           <div class="col-lg-3 col-sm-6 mt-5">
+                                <div class="card text-center" >
+                                    
+                                      
+                                        <div class="btn-group-toggle" data-toggle="buttons">
+                                            <button class="btn btn-light text_pink">                                                                                        
+                                                <i class="bi bi-suit-heart text_pink"></i>
+                                            </button>
+                                        </div>
+
+                                        <div class="img-hover-zoom">                                            
+                                            <img src="../../../assets/salon1.png" class="card-img-top br_img" alt="...">
+                                        </div>
+
+                                        <div class="card-body p0">
+                                            <h5 class="card-title">Salon Victoria</h5>
+                                            <div class="col-md-12 np">
+                                                <i class="bi bi-star-fill mr1 text_oscuro"></i>
+                                                <i class="bi bi-star-fill mr1 text_oscuro"></i>
+                                                <i class="bi bi-star-fill mr1 text_oscuro"></i>
+                                                <i class="bi bi-star-fill mr1 text_oscuro"></i>
+                                                <i class="bi bi-star text_oscuro"></i>
+                                            </div>
+                                            <p class="card-text mt0 np text_oscuro">Cap. Max. 200 prs</p>
+                                            <p class="card-text mt0 np text_oscuro">Ciudad,Zapopan #456</p>
+                                            <div class="col-md-12 mb-2 text_oscuro">
+                                                <span class="precio text_oscuro">$ 12,000.00</span>
+                                            </div>
+                                            <div class="col-md-12 mt-3">
+                                                <button  class="btn-neon btn-smp b_large animate__animated">Ver Detalles</button>
+                                            </div>
+
+                                            <div class="card-footer">
+                                                
+                                            </div>
+                                    </div>
+                                </div>
+                           </div>
+
+
+
+
+                            <div class="col-lg-3 col-sm-6 mt-5">
+                                <div class="card text-center" >
+
+                                    <div class="btn-group-toggle" data-toggle="buttons">
+                                        <button class="btn btn-light text_pink">                                                                                        
+                                            <i class="bi bi-suit-heart-fill"></i>
+                                        </button>
+                                    </div>
+
+                                        <div class="img-hover-zoom">
+                                            <img src="../../../assets/salon2.png" class="card-img-top br_img" alt="...">
+                                        </div>                                   
+
+                                        <div class="card-body p0">
+                                            <h5 class="card-title">Salon Real Posada</h5>
+                                            <div class="col-md-12 np">
+                                                <i class="bi bi-star-fill mr1 text_oscuro"></i>
+                                                <i class="bi bi-star-fill mr1 text_oscuro"></i>
+                                                <i class="bi bi-star-fill mr1 text_oscuro"></i>
+                                                <i class="bi bi-star-fill mr1 text_oscuro"></i>
+                                                <i class="bi bi-star text_oscuro"></i>
+                                            </div>
+                                            <p class="card-text mt0 np text_oscuro">Cap. Max. 200 prs</p>
+                                            <p class="card-text mt0 np text_oscuro">Ciudad,Zapopan #456</p>
+                                            <div class="col-md-12 mb-2 text_oscuro">
+                                                <span class="precio text_oscuro">$ 12,000.00</span>
+                                            </div>
+                                            <div class="col-md-12 mt-3">
+                                                <button  class="btn-neon btn-smp b_large animate__animated">Ver Detalles</button>
+                                            </div>
+
+                                            <div class="card-footer">
+                                                
+                                            </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-lg-3 col-sm-6 mt-5">
+                                <div class="card text-center" >
+
+                                        <div class="btn-group-toggle" data-toggle="buttons">
+                                            <button class="btn btn-light text_pink">                                                                                        
+                                                <i class="bi bi-suit-heart text_pink"></i>
+                                            </button>
+                                        </div>
+
+
+                                        <div class="img-hover-zoom">
+                                            <img src="../../../assets/salon3.png" class="card-img-top br_img" alt="...">
+                                        </div>
+                                        <div class="card-body p0">
+                                            <h5 class="card-title">Salon Campestre San Jose</h5>
+                                            <div class="col-md-12 np">
+                                                <i class="bi bi-star-fill mr1 text_oscuro"></i>
+                                                <i class="bi bi-star-fill mr1 text_oscuro"></i>
+                                                <i class="bi bi-star-fill mr1 text_oscuro"></i>
+                                                <i class="bi bi-star text_oscuro mr1"></i>
+                                                <i class="bi bi-star text_oscuro"></i>
+                                            </div>
+                                            <p class="card-text mt0 np text_oscuro">Cap. Max. 200 prs</p>
+                                            <p class="card-text mt0 np text_oscuro">Ciudad,Zapopan #456</p>
+                                            <div class="col-md-12 mb-2 text_oscuro">
+                                                <span class="precio text_oscuro">$ 12,000.00</span>
+                                            </div>
+                                            <div class="col-md-12 mt-3">
+                                                <button  class="btn-neon btn-smp b_large animate__animated">Ver Detalles</button>
+                                            </div>
+
+                                            <div class="card-footer">
+
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+                  </div>
+            </div>
+           
+       </div>
+
+
+
+
+
+        
+          
+    </div>
+    <!-- FOOTER -->
+    <app-footer *ngIf="!carga_pagina"></app-footer>

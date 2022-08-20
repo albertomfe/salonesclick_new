@@ -32,3 +32,10 @@
     background-repeat: no-repeat;
     background-size: contain;   
 }
+
+.bg-right2{
+    background-color: none!important;
+    background: url('/assets/fondos/6.png') no-repeat center center;
+    background-repeat: no-repeat;
+    background-size: contain;   
+}

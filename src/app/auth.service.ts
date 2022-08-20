@@ -53,9 +53,9 @@ export class AuthService
 
 
    /*Obtener Usuario*/
-   getUser():Observable<any>{
+   /*getUser():Observable<any>{
     return this._http.get(this.url+'/api/users/2');
-  }
+  }*/
 
 
     //autentificacion
@@ -108,6 +108,80 @@ export class AuthService
     this.url=environment.baseUrl+"api/services/usuarios/register";
     return this._http.post(this.url,param,{headers:headers});
   }
+
+
+
+
+    /*Obtener Usuario*/
+    getUser(token:string):Observable<any>
+    {
+      let headers = { "Accept": "application/json" };
+      this.url=environment.baseUrl+"api/services/usuarios/getId?token="+token;
+      return this._http.get(this.url,{headers:headers});
+    }
+
+
+     //cambiar datos
+   changeData(nombre:string,apellido:string,correo:string,id:number):Observable<any>{
+    //Establecemos cabeceras
+    let headers = { "Accept": "application/json" };
+    let parametros=new FormData();
+    var param=`
+    {
+        "Request":
+        {
+            "body":
+            {
+              "user":"`+correo+`",
+              "name":"`+nombre+`",
+              "surname":"`+apellido+`",
+              "userId":"`+id+`"
+            },
+            "auth":{"user":"`+environment.user+`","password":"`+environment.password+`"}
+        }
+    }
+    `;
+
+    this.url=environment.baseUrl+"api/services/usuarios/changeDateUser";
+    return this._http.post(this.url,param,{headers:headers});
+ }
+
+
+
+ //cambiar datos
+ changePass(passwordOld:string,passwordNew:string,passwordConfirm:string,id:number):Observable<any>{
+    //Establecemos cabeceras
+    let headers = { "Accept": "application/json" };
+    let parametros=new FormData();
+    var param=`
+    {
+        "Request":
+        {
+            "body":
+            {
+              "passwordOld":"`+passwordOld+`",
+              "passwordNew":"`+passwordNew+`",
+              "passwordConfirm":"`+passwordConfirm+`",
+              "userId":"`+id+`"
+            },
+            "auth":{"user":"`+environment.user+`","password":"`+environment.password+`"}
+        }
+    }
+    `;
+
+    this.url=environment.baseUrl+"api/services/usuarios/changePassword";
+    return this._http.post(this.url,param,{headers:headers});
+ }
+
+
+ /*Obtener Sesiones*/
+ getSesions(id:number):Observable<any>
+ {
+   let headers = { "Accept": "application/json" };
+   this.url=environment.baseUrl+"api/services/usuarios/getSesions?userId="+id;
+   return this._http.get(this.url,{headers:headers});
+ }
+
 
 
 
