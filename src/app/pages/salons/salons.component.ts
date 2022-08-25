@@ -55,14 +55,14 @@ export class SalonsComponent implements OnInit {
   {
     setTimeout(() => {
       this.placeholder=false;
-    }, 0);//4000
+    }, 4000);//4000
   }
 
   efecto_carga()
   {
     setTimeout(() => {
       this.carga_pagina=false;
-    }, 0);//2000
+    }, 2000);//2000
   }
 
 

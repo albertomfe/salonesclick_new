@@ -14,6 +14,14 @@ import { SalonsComponent } from './pages/salons/salons.component';
 import { SalonsDetailComponent } from './pages/salons-detail/salons-detail.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 
+/**cuento de usuario */
+import { SettingComponent } from './pages/account/setting/setting.component';
+import { InboxComponent } from './pages/account/inbox/inbox.component';
+import { AssessmentComponent } from './pages/account/assessment/assessment.component';
+import { BookingsComponent } from './pages/account/bookings/bookings.component';
+import { PersonalInformationComponent } from './pages/account/personal-information/personal-information.component';
+import { PaymentMethodComponent } from './pages/account/payment-method/payment-method.component';
+import { NotificationsComponent } from './pages/account/notifications/notifications.component';
 
 
 const routes: Routes = [
@@ -29,6 +37,16 @@ const routes: Routes = [
   {path:'Salons',component:SalonsComponent},
   {path:'SalonsDetail',component:SalonsDetailComponent},
   {path:'Profile',component:ProfileComponent},
+  /*cuenta*/
+  {path:'Settings',component:SettingComponent},/**configuracion */
+  {path:'Inbox',component:InboxComponent},/**Bandeja de entrada */
+  {path:'Assessments',component:AssessmentComponent},/**Evaluaciones*/
+  {path:'Bookings',component:BookingsComponent},/**Reservaciones*/
+  {path:'PersonalInfo',component:PersonalInformationComponent},/**Informaciòn Personal*/
+  {path:'PaymentMethod',component:PaymentMethodComponent},/**Metodo de Cobro*/
+  {path:'Notifications',component:NotificationsComponent},/**Configurar que notificaciones desea recibir*/
+
+
   {path:'**',component:NofoundComponent},
 ];
 

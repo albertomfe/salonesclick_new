@@ -1,1 +1,101 @@
-<p>salons-detail works!</p>
+
+    <div class='loader' *ngIf="carga_pagina"> 
+        <div class='container_loader'>
+            <div class='ring'></div>
+            <div class='ring'></div>
+            <div class='ring'></div>
+            <p >...Cargando...</p>
+        </div>
+    </div>
+
+
+    <!-- cargar contenido -->
+    <div class="container-fluid" *ngIf="!carga_pagina" id="contenedor_principal">
+
+       <app-nav></app-nav>
+
+
+       <!-- WELCOME -->
+        <div class="row">
+
+            <div class="col-md-12">
+                    <div class="jumbotron">
+                        
+                                      
+                        
+                        <!--Places Holders-->
+                        <div class="row pl3" *ngIf="placeholder">
+                           
+                            <!--carga real-->
+
+                        </div>
+
+
+
+                        <div class="row pl3" *ngIf="!placeholder" >
+                           
+                            <!--carga real-->
+                                
+                                        
+                            
+                            <div class="col-md-6 card p-4">
+
+                                <h1 class="display-6 texto_gris">Nombre de Salon</h1>
+                                <p class="texto_gris">
+                                    250 capacidad 
+                                </p>
+                                <div class="row ">
+                                    <div class="col-md-12">
+                                        <i class="bi bi-star-fill mr1 texto_gris"></i>
+                                        <i class="bi bi-star-fill mr1 texto_gris"></i>
+                                        <i class="bi bi-star-fill mr1 texto_gris"></i>
+                                        <i class="bi bi-star-fill mr1 texto_gris"></i>
+                                        <i class="bi bi-star texto_gris"></i>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <!--carrusel-->
+                                    <img src="../../../assets/salones/s1.jpeg" class="d-block w-100" alt="...">
+                                </div>
+                                            
+                                    
+
+                            </div>
+
+
+
+
+                            <!--info de pago-->
+                            <div class="col-md-6">
+                                <div class="card p-4" >
+
+                                    asd
+                                </div>
+
+                            </div>
+                        
+                                   
+    
+                                
+                            
+
+                           
+
+
+
+                        </div>
+                  </div><!--jumbutron-->
+            </div><!--col-12-->
+           
+        </div><!--row-->
+
+
+
+
+
+        
+          
+    </div><!--container fluid-->
+    <!-- FOOTER -->
+    <app-footer *ngIf="!carga_pagina"></app-footer>

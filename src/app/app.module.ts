@@ -23,6 +23,13 @@ import { RecoveryComponent } from './pages/recovery/recovery.component';
 import { SalonsComponent } from './pages/salons/salons.component';
 import { SalonsDetailComponent } from './pages/salons-detail/salons-detail.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { SettingComponent } from './pages/account/setting/setting.component';
+import { InboxComponent } from './pages/account/inbox/inbox.component';
+import { AssessmentComponent } from './pages/account/assessment/assessment.component';
+import { BookingsComponent } from './pages/account/bookings/bookings.component';
+import { PersonalInformationComponent } from './pages/account/personal-information/personal-information.component';
+import { PaymentMethodComponent } from './pages/account/payment-method/payment-method.component';
+import { NotificationsComponent } from './pages/account/notifications/notifications.component';
 
 
 @NgModule({
@@ -41,7 +48,14 @@ import { ProfileComponent } from './pages/profile/profile.component';
     RecoveryComponent,
     SalonsComponent,
     SalonsDetailComponent,
-    ProfileComponent
+    ProfileComponent,
+    SettingComponent,
+    InboxComponent,
+    AssessmentComponent,
+    BookingsComponent,
+    PersonalInformationComponent,
+    PaymentMethodComponent,
+    NotificationsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,265 @@
+.card
+{
+    background-color: rgba(0,0,0,0.5)!important;
+    border-radius:15px;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+    border-color: rgb(187, 187, 187);
+}
+
+.card-body{
+    background-color: #fff;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;    
+}
+
+.input-group-text{
+    background-color: rgba(0,0,0,0.5)!important;    
+}
+
+.card-title{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    color: #000;
+    font-weight: bold;
+}
+
+.text-white{
+    color:#fff;
+}
+.text_claro{
+    color:#ccc;
+    font-weight: 100;
+}
+.text_pink{
+    color:rgb(240, 112, 112);
+    font-weight: 100;
+}
+.text_oscuro{
+    color:#242424;
+    font-weight: 100;
+}
+.texto_gris{
+    color:#4e4e4e;
+    font-weight: 100;
+}
+
+.mt0{
+    margin: 0px;
+}
+.mr0{
+    margin-right: 0px;
+}
+.mr1{
+    margin-right: 5px;
+}
+
+.p0{
+    padding: 0px;
+    padding-bottom: 20px;
+}
+
+.br_img{
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.np{
+    padding: 0px;
+    padding-top: -25px!important;
+}
+
+.precio
+{
+    font-size: 22px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif!important;
+}
+
+.b_large{
+    margin-top:20px;
+    height: 90px;
+}
+
+.btn-neon{   
+    color: #242424;
+    border-radius:15px;
+    padding: 15px 15px;
+    font-size: 16px;
+    letter-spacing:2px;
+    cursor: pointer;
+    font-weight: 300;
+     transition: .5s;
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(62, 169, 231)!important;
+    box-shadow: 0px 0px 14px 2px rgb(14, 147, 184)!important;
+}
+
+.btn-neon:hover{
+   color:#fff;
+   background-color: var(--dark-background-body)!important;
+   box-shadow: 0px 0px 44px 4px rgb(14, 147, 184)!important;
+   /*Animacion*/
+   -webkit-animation-name: jello;
+   animation-name: jello;
+   -webkit-transform-origin: center;
+   transform-origin: center;
+   --animate-duration: 2s!important;
+}
+
+
+.img-hover-zoom{
+    overflow: hidden; /* [1.2] Hide the overflowing of child elements */
+}
+
+.img-hover-zoom img {
+    transition: transform .5s ease;
+}
+
+/* [3] Finally, transforming the image when container gets hovered */
+.img-hover-zoom:hover img {
+    transform: scale(1.5);
+}
+
+.logo_principal
+{
+    width: 320px;
+}
+
+
+
+/*Place Holders*/
+
+.css-selector {
+    background: linear-gradient(37deg, #c4c6c6, #979595);
+    background-size: 400% 400%;
+
+    -webkit-animation: placeholder-bg 0s ease infinite;
+    -moz-animation: placeholder-bg 0s ease infinite;
+    animation: placeholder-bg 0s ease infinite;
+}
+
+@-webkit-keyframes placeholder-bg {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes placeholder-bg {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes placeholder-bg {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+.img_placeholder{
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;    
+    height: 216px;
+
+    background: linear-gradient(37deg, #c4c6c6, #979595);
+    background-size: 400% 400%;
+    -webkit-animation: placeholder-bg 1s ease infinite;
+    -moz-animation: placeholder-bg 1s ease infinite;
+    animation: placeholder-bg 1s ease infinite;
+}
+
+.card-title-placeholder{
+    height: 20px;
+    width: 90%;
+    margin: auto;
+    margin-top:10px;
+    border-radius: 10px;
+
+    background: linear-gradient(37deg, #c4c6c6, #979595);
+    background-size: 400% 400%;
+    -webkit-animation: placeholder-bg 1s ease infinite;
+    -moz-animation: placeholder-bg 1s ease infinite;
+    animation: placeholder-bg 1s ease infinite;
+}
+
+.card-stars-placeholder{
+    height: 20px;
+    width: 70%;
+    margin: auto;
+    margin-top:10px;
+    border-radius: 10px;
+
+    background: linear-gradient(37deg, #c4c6c6, #979595);
+    background-size: 400% 400%;
+    -webkit-animation: placeholder-bg 1s ease infinite;
+    -moz-animation: placeholder-bg 1s ease infinite;
+    animation: placeholder-bg 1s ease infinite;
+}
+.card-capacity-placeholder{
+    height: 20px;
+    width: 50%;
+    margin: auto;
+    margin-top:10px;
+    border-radius: 10px;
+
+    background: linear-gradient(37deg, #c4c6c6, #979595);
+    background-size: 400% 400%;
+    -webkit-animation: placeholder-bg 1s ease infinite;
+    -moz-animation: placeholder-bg 1s ease infinite;
+    animation: placeholder-bg 1s ease infinite;
+}
+.card-price-placeholdero{
+    height: 35px;
+    width: 30%;
+    margin: auto;
+    margin-top:10px;
+    border-radius: 10px;
+
+    background: linear-gradient(37deg, #c4c6c6, #979595);
+    background-size: 400% 400%;
+    -webkit-animation: placeholder-bg 1s ease infinite;
+    -moz-animation: placeholder-bg 1s ease infinite;
+    animation: placeholder-bg 1s ease infinite;
+}
+.card-button-placeholdero{
+    height: 35px;
+    width: 50%;
+    margin: auto;
+    margin-top:10px;
+    border-radius: 10px;
+
+    background: linear-gradient(37deg, #c4c6c6, #979595);
+    background-size: 400% 400%;
+    -webkit-animation: placeholder-bg 1s ease infinite;
+    -moz-animation: placeholder-bg 1s ease infinite;
+    animation: placeholder-bg 1s ease infinite;
+}
+
+.card{
+    background: #fff!important;
+    border-radius: 50px;
+    border-radius: 50px;
+    border-radius: 59px;
+
+   
+}
+
+.card-img-top{
+    position: relative;
+    top:0px!important;
+}
+.hearth_div{
+    position: relative;
+    top:0px!important;
+    width:60px;
+    z-index: 9999;
+}
+
+.btn-light{
+    box-shadow: 0px 4px 16px 0px rgba(209,140,140,0.75)!important;
+    -webkit-box-shadow: 0px 4px 16px 0px rgba(209,140,140,0.75)!important;
+    -moz-box-shadow: 0px 4px 16px 0px rgba(209,140,140,0.75)!important;
+}
+
+.card-footer{
+    clip-path: polygon(100% 85%, 90% 100%, 13% 100%, 0 85%, 50% 85%);
+    background-color: rgb(231, 198, 52);
+}
