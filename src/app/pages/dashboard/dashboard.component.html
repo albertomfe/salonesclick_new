@@ -1,0 +1,197 @@
+
+    <div class='loader' *ngIf="carga_pagina"> 
+        <div class='container_loader'>
+            <div class='ring'></div>
+            <div class='ring'></div>
+            <div class='ring'></div>
+            <p >...Cargando...</p>
+        </div>
+    </div>
+
+
+    <!-- cargar contenido -->
+    <div class="container-fluid" *ngIf="!carga_pagina" id="contenedor_principal">
+
+       <app-nav></app-nav>
+
+
+       <!-- WELCOME -->
+       <div class="row mt-5">
+
+
+            <div class="col-md-12">
+                <div class="jumbotron">
+                    <h1 class="display-5">TU CUENTA</h1>
+                    <p class="lead">Bienvenido,Nos da gusto Saludarte, Aqui tienes Todas las Herramientas para gestionar tu Cuenta .</p>
+                
+                    <hr class="my-4">   
+
+                
+                    
+                    <div class="row">
+
+
+                        <div class="col-md-4 col-lg-3 col-12 mt-5">
+                            <div class="card">
+                                <div class="card-body">
+                    
+                                    
+                                    <div class="row">
+                                        <div class="col-md-12 ">                                            
+                                            <p>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-card-heading" viewBox="0 0 16 16">
+                                                    <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+                                                    <path d="M3 8.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm0-5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5v-1z"/>
+                                                </svg>
+                                                INFORMACIÓN PERSONAL
+                                            </p>
+                                            <hr>
+                                            <p>
+                                                Proporciona tus datos personales ,para que puedan y podamos comunicarnos contigo
+                                            </p>
+                                        </div>
+                                        <div class="col-12  justify-content-center">
+                                            <a class="btn-neon btn-xs btn-menu ">VER..</a>
+                                        </div> 
+                                    </div>
+                    
+                                </div>                    
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-lg-3 col-12 mt-5">
+                            <div class="card">
+                                <div class="card-body">
+                    
+                                    
+                                    <div class="row">
+                                        <div class="col-md-12 ">                                            
+                                            <p>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-key" viewBox="0 0 16 16">
+                                                    <path d="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8zm4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5z"/>
+                                                    <path d="M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                                                </svg>
+                                                INICIO DE SESIÓN Y SEGURIDAD
+                                            </p>
+                                            <hr>
+                                            <p>
+                                               Configure Actualice su contraseña para el Ingreso a la Plataforma
+                                            </p>
+                                        </div>
+                                        <div class="col-12  justify-content-center">
+                                            <a class="btn-neon btn-xs btn-menu ">VER..</a>
+                                        </div> 
+                                    </div>
+                    
+                                </div>                    
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-4 col-lg-3 col-12 mt-5">
+                            <div class="card">
+                                <div class="card-body">
+                    
+                                    
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <p>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-credit-card-fill" viewBox="0 0 16 16">
+                                                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1H0V4zm0 3v5a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7H0zm3 2h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1a1 1 0 0 1 1-1z"/>
+                                                </svg>
+                                                METODOS DE COBRO
+                                            </p>
+                                            <hr>
+                                            <p>
+                                                Proporciona los datos de su cuenta , para que pueda recibir pagos y depositos.
+                                            </p>
+                                        </div>
+                                        <div class="col-12  justify-content-center">
+                                            <a class="btn-neon btn-xs btn-menu ">VER..</a>
+                                        </div> 
+                                    </div>
+                    
+                                </div>                    
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-4 col-lg-3 col-12 mt-5">
+                            <div class="card">
+                                <div class="card-body">
+                    
+                                    
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <p>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-toggles" viewBox="0 0 16 16">
+                                                    <path d="M4.5 9a3.5 3.5 0 1 0 0 7h7a3.5 3.5 0 1 0 0-7h-7zm7 6a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm-7-14a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zm2.45 0A3.49 3.49 0 0 1 8 3.5 3.49 3.49 0 0 1 6.95 6h4.55a2.5 2.5 0 0 0 0-5H6.95zM4.5 0h7a3.5 3.5 0 1 1 0 7h-7a3.5 3.5 0 1 1 0-7z"/>
+                                                </svg>
+                                                PREFERENCIAS DE NOTIFICACIONES
+                                            </p>
+                                            <hr>
+                                            <p>
+                                                Indiquenos que información le gustaria que le notificaramos.
+                                            </p>
+                                        </div>
+                                        <div class="col-12  justify-content-center">
+                                            <a class="btn-neon btn-xs btn-menu ">VER..</a>
+                                        </div> 
+                                    </div>
+                    
+                                </div>                    
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-4 col-lg-3 col-12 mt-5">
+                            <div class="card">
+                                <div class="card-body">
+                    
+                                    
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <p>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-tools" viewBox="0 0 16 16">
+                                                    <path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3c0-.269-.035-.53-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814L1 0Zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708ZM3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026L3 11Z"/>
+                                                </svg>
+                                                OTRAS HERRAMIENTAS
+                                            </p>
+                                            <hr>
+                                            <p>
+                                                Aqui  una lista de Herramientas que ponemos a su disposicion de forma gratuita.
+                                            </p>
+                                        </div>
+                                        <div class="col-12  justify-content-center">
+                                            <a class="btn-neon btn-xs btn-menu ">VER..</a>
+                                        </div> 
+                                    </div>
+                    
+                                </div>                    
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                    
+                </div>
+            </div>
+
+
+            <div class="col-md-12 h400 bg-top-dashboard">
+                    
+            </div>
+
+            
+            
+       </div>
+
+
+
+        
+          
+    </div>
+    <!-- FOOTER -->
+    <app-footer *ngIf="!carga_pagina"></app-footer>

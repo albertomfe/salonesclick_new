@@ -75,7 +75,7 @@ body{
     letter-spacing:2px;
     cursor: pointer;
     font-weight: bold;
-     transition: .5s;
+    transition: .5s;
     font-weight: 100;
     font-family: 'Roboto', sans-serif;
     background-color: rgb(62, 169, 231)!important;
@@ -93,7 +93,12 @@ body{
     padding-left: 15px;
 }
 
-
+a.btn-xs{
+    
+    text-decoration: none;
+    height: 40px!important;
+    padding: 10px 10px!important; 
+}
 
 
 .btn{
@@ -175,7 +180,7 @@ a[href]
 }
 /**activo para modo dark*/
 .darkMode .navigation ul li.active{
-    background:var(--dark-background-body);
+    background:var(--dark-background-body);    
 }
 
 .navigation ul li a
@@ -329,6 +334,7 @@ a[href]
             box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
     }
 
+ 
     .lightMode .navheader .nav
     {
         box-shadow: 5px 5px 18px -4px #747474;
@@ -362,13 +368,27 @@ a[href]
         background:var(--light-background-body)!important;
         color:var(--light-color-body)!important;
         height:70px;
+        font-weight: bold!important;
     }
     /**activo para modo dark*/
     .darkMode .navheader ul li.active a{
         background:var(--dark-background-body)!important;
         color:var(--dark-color-body)!important;
         height: 70px;
+        font-weight: bold!important;
     }
+
+    .navheader ul li.active a{
+        background:none!important;
+        color:gold!important;
+        height: 70px;
+        font-weight: bold!important;
+    }
+
+
+    /*.navheader > .nav-item .active{
+        font-weight: bold;
+    }*/
 
 
     .lightMode .card
@@ -957,3 +977,29 @@ input.form-control{
 ::-webkit-datetime-edit-day-field { color: rgb(216, 216, 216); }
 ::-webkit-datetime-edit-year-field { color: rgb(216, 216, 216); }
 ::-webkit-inner-spin-button { display: none; }
+
+
+.text-gris{
+    color: #eee!important;
+}
+
+.fondo_oscuro_traslucido{
+    background-color: rgba(0,0,0,0.5)!important;
+    border-radius:15px;
+}
+
+.nav-block{
+ border-radius: 10px;
+ width: 450px!important;
+ display: block;
+ border-bottom: 1px solid #eee;
+}
+.navheader ul li a.nav-block{
+ background: rgb(48, 48, 48)!important;
+}
+.navheader ul li:hover a.nav-block{
+    animation-duration: 0s!important;    
+    background:none;
+    background:none!important;
+    background: rgb(48, 48, 48)!important;
+}

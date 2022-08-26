@@ -1,0 +1,11 @@
+.img_user_nav{
+    width: 40px!important;
+    height: 40px!important;
+    border-radius: 20px;
+    border-radius: 50px;
+    border-radius: 18px;
+    border-radius: 18px;
+    background: linear-gradient(145deg, #717171, #868686);
+    box-shadow:  5px 5px 16px #797979,
+                 -5px -5px 16px #818181;
+}

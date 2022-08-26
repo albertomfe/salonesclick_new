@@ -70,7 +70,7 @@ export class ProfileComponent implements OnInit {
     this.passConfirm="";
 
     this.sessions = new Array();
-    //this.validar_token();
+    this.validar_token();
   }
 
   ngOnInit(): void {
@@ -117,34 +117,39 @@ export class ProfileComponent implements OnInit {
               this.apellido=this.info_user.user.apellidos;
               this.mail=this.info_user.user.mail;
               this.imagen=this.info_user.user.imagen;
+              //console.log(token);
+              this.getIdUser(token);
             },
             error=>
             {
               localStorage.removeItem("user");
               this.acceso=false;
-              //window.location.href='./Login';
+              window.location.href='./Home';
             }
           );
         }//validar mail vacio
         else
         {
           this.acceso=false;
+          window.location.href='./Home';
         }
       }//localstorage validacion
       else
       {
         this.acceso=false;
+        window.location.href='./Home';
       }
     }//validar que permita el localstorage
     else{
       this.acceso=false;
+      window.location.href='./Home';
     }
   }
 
 
 
 
-  getIdUser(token)
+  getIdUser(token:string)
   {
     //request
     this._AuthService.getUser(token).subscribe(
@@ -242,6 +247,7 @@ export class ProfileComponent implements OnInit {
         this._AuthService.getSesions(this.id).subscribe(
           resultado=>{
             this.sessions=resultado['items']['result'];
+            console.log(this.sessions);
           },
           error=>{
             this.sessions=[];

@@ -30,6 +30,8 @@ import { BookingsComponent } from './pages/account/bookings/bookings.component';
 import { PersonalInformationComponent } from './pages/account/personal-information/personal-information.component';
 import { PaymentMethodComponent } from './pages/account/payment-method/payment-method.component';
 import { NotificationsComponent } from './pages/account/notifications/notifications.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { HelpCenterComponent } from './pages/help-center/help-center.component';
 
 
 @NgModule({
@@ -55,7 +57,9 @@ import { NotificationsComponent } from './pages/account/notifications/notificati
     BookingsComponent,
     PersonalInformationComponent,
     PaymentMethodComponent,
-    NotificationsComponent
+    NotificationsComponent,
+    DashboardComponent,
+    HelpCenterComponent
   ],
   imports: [
     BrowserModule,

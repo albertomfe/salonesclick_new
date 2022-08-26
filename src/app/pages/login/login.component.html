@@ -7,7 +7,7 @@
     </div>
 </div>
 
-<div  *ngIf="!carga_pagina && acceso==false">
+<div  *ngIf="!carga_pagina">
 
 
     <!-- cargar contenido -->
@@ -22,7 +22,7 @@
                     
                 
                 <!--Login  -->
-                <div class="d-flex justify-content-center mt-10" >
+                <div class="d-flex justify-content-center mt-10" *ngIf="acceso==false" >
                     <div class="card col-md-4">
                     <div class="card-header text-center">   
 
@@ -94,13 +94,11 @@
                 </div>
 
 
-                <!--Bienvenido -->
-                <!--
-                <div class="d-flex justify-content-center" *ngIf="carga_pagina && acceso==true">
+                <!--Bienvenido -->                
+                <div class="d-flex justify-content-center" *ngIf="acceso">
                     <div class="card mt-10">
                     <div class="card-header text-center">
-                        <img style='height:90px' src="./assets/logos/logo_completo.png" alt="logotipo salones click">
-                        <h4 class='text-black'>Bienvenido </h4>
+                        <img style='height:90px' src="../../../assets/logo.png" alt="logotipo salones click">                        
                         <div class="d-flex justify-content-end social_icon">
                         <span><i class="fab fa-facebook-square"></i></span>
                         <span><i class="fab fa-google-plus-square"></i></span>
@@ -108,19 +106,23 @@
                         </div>
                     </div>
                     <div class="card-body" [ngStyle]="{'background':'none'}">
+                        <h4 class='text-gris text-center'>Bienvenido </h4>
                         <div class="text-center">
-                            <img *ngIf=" imagen!='' && imagen!=null " [ngStyle]="{'height': '200px','width': '200px'}" src="{{url}}{{imagen}}" alt="User Image" class="rounded" >
+                            <img *ngIf=" imagen!='' && imagen!=null " [ngStyle]="{'height': '200px','width': '200px'}" src="{{url}}{{imagen}}" alt="User Image" class="user_image_login" >
                         </div>
-                        <h3 class='text-center'>{{nombre}} {{apellido}} </h3>
+                        <h3 class='text-center text-gris'>{{nombre}} {{apellido}} </h3>
                     </div>
-                    <div class="card-footer text-center">
-                        <a [routerLink]="'/Home'" class='btn btn-primary'>
-                            Encuentra Tu Salon Ideal
+                    <div class="card-footer text-center form-row">
+                        <a [routerLink]="'/Home'" class='col btn-neon btn-xs '>
+                           Buscar un Salon
+                        </a>
+                        <a [routerLink]="'/DashBoard'" class='col btn-neon btn-xs ml-1'>
+                            Gestionar Mi Cuenta
                         </a>
                     </div>
                     </div>
                 </div>
-                -->
+                
 
                     
             

@@ -1,0 +1,41 @@
+.card
+{
+    background-color: rgba(0,0,0,0.5)!important;
+    border-radius:15px;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+.input-group-text{
+    background-color: rgba(0,0,0,0.5)!important;
+}
+
+.text-white{
+    color:#fff;
+}
+.text_claro{
+    color:#ccc;
+    font-weight: 100;
+}
+
+
+.bg-top-dashboard{
+    background-color: none!important;
+    background: url('/assets/fondos/dashboard.png') no-repeat center center;
+    background-repeat: no-repeat;
+    background-size: contain;   
+    clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+}
+
+.display-5{
+    font-weight: 200;
+}
+
+.btn-menu{
+    min-width: 60px!important;
+    height: 40px;
+    display: block;
+}
+
+.card-body{
+    min-height: 260px;
+}

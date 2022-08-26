@@ -16,3 +16,9 @@
     color:#ccc;
     font-weight: 100;
 }
+
+.user_image_login{
+    width: 100px!important;
+    height: 100px!important;
+    border-radius: 60px;
+}

@@ -1,0 +1,49 @@
+<div class='loader' *ngIf="carga_pagina"> 
+    <div class='container_loader'>
+        <div class='ring'></div>
+        <div class='ring'></div>
+        <div class='ring'></div>
+        <p>...Cargando...</p>
+    </div>
+</div>
+
+
+<!-- cargar contenido -->
+<div class="container-fluid " *ngIf="!carga_pagina" id="contenedor_principal">
+
+   <app-nav></app-nav>
+
+
+   <!-- WELCOME -->
+   <div class="row ">
+        <div class="col-md-12">
+                 
+            
+            <div class='row p-5'>
+                <div class="jumbotron fondo_oscuro_traslucido">
+                    <h3 class="display-5">CENTRO DE AYUDA</h3>
+                    <hr class="my-4">
+        
+                    <p>
+                        A los Usuarios, les informamos que los siguientes Términos y Condiciones les son aplicables por el simple
+                        uso o acceso a cualquiera de las páginas, aplicaciones web y móviles, softwares y, aplicaciones en
+                        general, que integran el Portal de www.salonesclick.com (en adelante y, conjunta e indistintamente, el
+                        "Portal"), por lo que entenderemos que los acepta y acuerda en obligarse a su cumplimiento.
+                        <strong>En el caso
+                            de que no esté de acuerdo con los Términos y Condiciones deberá abstenerse de acceder
+                            o utilizar el Portal.</strong>
+                    </p>
+        
+                   
+                </div>
+            </div>
+                 
+           
+        </div>  
+      
+
+    </div>
+</div>
+  
+<!-- FOOTER -->
+<app-footer></app-footer>

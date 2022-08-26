@@ -98,7 +98,7 @@ export class LoginComponent implements OnInit {
           this._AuthService.validate(token).subscribe(
             resultado=>{
               this.info_user=resultado||[];
-
+              //console.log(this.info_user);
               this.acceso=true;
               this.nombre=this.info_user.user.nombres;
               this.apellido=this.info_user.user.apellidos;

@@ -13,6 +13,9 @@ import { RecoveryComponent } from './pages/recovery/recovery.component';
 import { SalonsComponent } from './pages/salons/salons.component';
 import { SalonsDetailComponent } from './pages/salons-detail/salons-detail.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { HelpCenterComponent } from './pages/help-center/help-center.component';
+
 
 /**cuento de usuario */
 import { SettingComponent } from './pages/account/setting/setting.component';
@@ -30,13 +33,16 @@ const routes: Routes = [
   {path:'Login',component:LoginComponent},
   {path:'Plans',component:PlansComponent},
   {path:'Politics',component:PoliciesComponent},
-  {path:'Warning',component:WarningComponent},
+  {path:'Terms',component:WarningComponent},
   {path:'aboutUs',component:AboutusComponent},
   {path:'Register',component:RegisterComponent},
   {path:'Recovery',component:RecoveryComponent},
+  {path:'HelpCenter',component:HelpCenterComponent},
   {path:'Salons',component:SalonsComponent},
   {path:'SalonsDetail',component:SalonsDetailComponent},
   {path:'Profile',component:ProfileComponent},
+  {path:'DashBoard',component:DashboardComponent},
+  
   /*cuenta*/
   {path:'Settings',component:SettingComponent},/**configuracion */
   {path:'Inbox',component:InboxComponent},/**Bandeja de entrada */
