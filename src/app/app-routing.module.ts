@@ -25,7 +25,7 @@ import { BookingsComponent } from './pages/account/bookings/bookings.component';
 import { PersonalInformationComponent } from './pages/account/personal-information/personal-information.component';
 import { PaymentMethodComponent } from './pages/account/payment-method/payment-method.component';
 import { NotificationsComponent } from './pages/account/notifications/notifications.component';
-
+import { BeProviderComponent } from './pages/be-provider/be-provider.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -44,6 +44,7 @@ const routes: Routes = [
   {path:'DashBoard',component:DashboardComponent},
   
   /*cuenta*/
+  {path:'beProvider',component:BeProviderComponent},/**configuracion */
   {path:'Settings',component:SettingComponent},/**configuracion */
   {path:'Inbox',component:InboxComponent},/**Bandeja de entrada */
   {path:'Assessments',component:AssessmentComponent},/**Evaluaciones*/

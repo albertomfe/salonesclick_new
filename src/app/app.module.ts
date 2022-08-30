@@ -32,6 +32,7 @@ import { PaymentMethodComponent } from './pages/account/payment-method/payment-m
 import { NotificationsComponent } from './pages/account/notifications/notifications.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { HelpCenterComponent } from './pages/help-center/help-center.component';
+import { BeProviderComponent } from './pages/be-provider/be-provider.component';
 
 
 @NgModule({
@@ -59,7 +60,8 @@ import { HelpCenterComponent } from './pages/help-center/help-center.component';
     PaymentMethodComponent,
     NotificationsComponent,
     DashboardComponent,
-    HelpCenterComponent
+    HelpCenterComponent,
+    BeProviderComponent
   ],
   imports: [
     BrowserModule,

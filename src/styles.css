@@ -1003,3 +1003,19 @@ input.form-control{
     background:none!important;
     background: rgb(48, 48, 48)!important;
 }
+
+.texto_blanco{
+    color:#fff!important;
+}
+
+.alert-info{
+    background-image: radial-gradient(circle, #6b138b, #6a09a0, #6203b7, #5106d0, #2412eb)!important;
+    color:#fff!important;
+    font-size: 12px!important;
+}
+
+.fuente_titulo_provededor{
+    font-size: 22px;
+    font-weight: bold;
+    color:#fff!important;
+}
