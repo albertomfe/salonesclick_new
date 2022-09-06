@@ -1009,7 +1009,8 @@ input.form-control{
 }
 
 .alert-info{
-    background-image: radial-gradient(circle, #6b138b, #6a09a0, #6203b7, #5106d0, #2412eb)!important;
+    /*background-image: radial-gradient(circle, #6b138b, #6a09a0, #6203b7, #5106d0, #2412eb)!important;*/
+    background: none!important;
     color:#fff!important;
     font-size: 12px!important;
 }
@@ -1018,4 +1019,27 @@ input.form-control{
     font-size: 22px;
     font-weight: bold;
     color:#fff!important;
+}
+
+
+.toast-header{
+    background-image: radial-gradient(circle, #6b138b, #6a09a0, #6203b7, #5106d0, #2412eb)!important;
+    color:#fff!important;
+}
+.mitoast{
+    display: none;
+    position:fixed!important;
+    flex-basis: 350px!important;
+    max-width: 450px!important;
+    min-width: 350px!important;
+    font-size: .875rem!important;
+    background-image: radial-gradient(circle, #6b138b, #6a09a0, #6203b7, #5106d0, #2412eb)!important;
+    background-clip: padding-box!important;
+    border: 1px solid rgba(150, 150, 150, 0.959)!important;
+    box-shadow: 0 0.25rem 0.75rem rgb(0 0 0 / 10%)!important;
+    border-radius: .25rem!important;
+    z-index: 9999999999999!important;
+    right: 0!important;
+    top: 100!important;
+    color:#fff!important;   
 }

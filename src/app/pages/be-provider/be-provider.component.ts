@@ -43,6 +43,7 @@ export class BeProviderComponent implements OnInit {
   public apellido:string;
   public mail:string;
   public imagen:string;
+  public id:number;
 
   /**formulario */
   public rfc:string;
@@ -52,6 +53,8 @@ export class BeProviderComponent implements OnInit {
   public numero_interior:string;
   public estado:string;
   public ciudad:string;
+  public curp:string;
+  public codigo_postal:string;
 
   constructor(
     private _route: ActivatedRoute,
@@ -86,13 +89,43 @@ export class BeProviderComponent implements OnInit {
     }, 2000);
   }
 
-  desvanecer_alerta()
+
+  /*crear mis toast*/
+  crearMiToast(texto: string)
   {
-    setTimeout(() => {
-      this.msg_error='';
-      this.msg_success='';
-    }, 4000);
+    document.getElementById('contenidoToast').innerHTML=texto;
+    var toast=document.getElementById('msg_modal');
+    toast.style.display='block';
   }
+
+  /*desvanecer mis toast*/
+  desvanecerToast()
+  {
+    var toast=document.getElementById('msg_modal');
+    setTimeout(() => {
+      toast.style.display='none';
+    }, 5000);
+  }
+
+  cerrar_toast()
+  {
+    console.log('cerrar a la fuerza el toast');
+    var toast=document.getElementById('msg_modal');
+    toast.style.display='none';
+  }
+
+  getIdUser(token:string)
+  {
+    //request
+    this._AuthService.getUser(token).subscribe(
+      resultado=>{
+        //console.log(resultado['items']['result']);
+        this.id=resultado['items']['result']||0;        
+      },
+      error=>{}
+    );
+  }
+
 
   
   validar_token()
@@ -111,6 +144,7 @@ export class BeProviderComponent implements OnInit {
             resultado=>{
               this.info_user=resultado||[];
               //console.log(this.info_user);
+              this.getIdUser(token);
               this.acceso=true;
               this.nombre=this.info_user.user.nombres;
               this.apellido=this.info_user.user.apellidos;
@@ -145,6 +179,50 @@ export class BeProviderComponent implements OnInit {
 
   enviar()
   {
+
+    
+    let rfc=this.rfc||'';
+    let nombre_contribuyente=this.nombre_contribuyente||"";
+    let direccion=this.direccion||""; 
+    let numero_exterior=this.numero_exterior||""; 
+    let numero_interior=this.numero_interior||""; 
+    let estado=this.estado||""; 
+    let ciudad=this.ciudad||"";
+
+
+    if(rfc=="" || nombre_contribuyente=="" || direccion=="" || numero_exterior==""  || estado=="" || ciudad=="" )
+    {
+      this.crearMiToast(" Capture los Datos Porfavor ");
+      this.desvanecerToast();
+      return 0;
+    }
+    else
+    {
+      console.log('enviando la solicitud ....');
+        //request
+        this._AuthService.beProviderService(this.id,this.rfc,this.nombre_contribuyente,this.direccion,this.numero_exterior,this.numero_interior,this.ciudad,this.estado,this.codigo_postal,this.curp).subscribe(
+          resultado=>{
+            this.msg_error="";
+            this.info_user=resultado||[];
+
+            this.crearMiToast("Tu solicitud se ha enviado, se le notificara via plataforma y correo electronico cuando su solicitud este aprobada. ");
+            this.desvanecerToast();
+            return 0;           
+          },
+          error=>{
+            this.crearMiToast("No pudo enviarse su solicitud,Comuniquese con el Administrador ");
+            this.desvanecerToast();
+            return 0;
+          }
+        );
+
+
+    }
+
+
+      
+
+
 
   }
 

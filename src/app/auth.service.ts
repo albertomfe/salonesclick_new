@@ -185,4 +185,37 @@ export class AuthService
 
 
 
+
+ //autentificacion
+ beProviderService(id:number,rfc,nombre_contribuyente,direccion,numero_ext,numero_int,ciudad,estado,cp,curp):Observable<any>
+ {
+    let headers = { "Accept": "application/json" };
+    let parametros=new FormData();
+    var param=`
+    {
+        "Request":
+        {
+            "body":
+            {
+                "id_user":"`+id+`",
+                "rfc":"`+rfc+`",
+                "nombre_contribuyente":"`+nombre_contribuyente+`",
+                "direccion":"`+direccion+`",
+                "numero_ext":"`+numero_ext+`",
+                "numero_int":"`+numero_int+`",
+                "ciudad":"`+ciudad+`",
+                "estado":"`+estado+`",
+                "cp":"`+cp+`",
+                "curp":"`+curp+`"
+            },
+            "auth":{"user":"`+environment.user+`","password":"`+environment.password+`"}
+        }
+    }
+    `;
+    this.url=environment.baseUrl+"api/services/usuarios/beProvider";
+    return this._http.post(this.url,param,{headers:headers});
+ }
+
+
+
 }
