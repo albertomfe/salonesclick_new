@@ -37,6 +37,8 @@ export class DashboardComponent implements OnInit {
   /*urlBase*/
   public url:string;
 
+  public isProveedor:number;
+
   constructor(
     private _route: ActivatedRoute,
     private _router: Router,
@@ -52,6 +54,8 @@ export class DashboardComponent implements OnInit {
     this.acceso=false;
 
     this.validar_token();
+
+    this.isProveedor=0;
   }
 
 
@@ -101,6 +105,7 @@ export class DashboardComponent implements OnInit {
               this.imagen=this.info_user.user.imagen;
               //console.log(token);
               this.getIdUser(token);
+              this.verifyProveedor(token);//revisar si es proveedor
             },
             error=>
             {
@@ -138,6 +143,20 @@ export class DashboardComponent implements OnInit {
       resultado=>{
         //console.log(resultado['items']['result']);
         this.id=resultado['items']['result']||0;        
+      },
+      error=>{}
+    );
+  }
+
+
+
+  verifyProveedor(token:string)
+  {
+    //request
+    this._AuthService.checkProveedor(token).subscribe(
+      resultado=>{
+        //console.log(resultado['items']['result']);
+        this.isProveedor=resultado['items']['result']||0;        
       },
       error=>{}
     );

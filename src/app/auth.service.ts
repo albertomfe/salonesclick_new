@@ -187,7 +187,7 @@ export class AuthService
 
 
  //autentificacion
- beProviderService(id:number,rfc,nombre_contribuyente,direccion,numero_ext,numero_int,ciudad,estado,cp,curp):Observable<any>
+ beProviderService(id:number,rfc,nombre_contribuyente,direccion,numero_ext,numero_int,ciudad,estado,cp,curp,regimen_fiscal:string):Observable<any>
  {
     let headers = { "Accept": "application/json" };
     let parametros=new FormData();
@@ -198,6 +198,7 @@ export class AuthService
             "body":
             {
                 "id_user":"`+id+`",
+                "regimen_fiscal":"`+regimen_fiscal+`",
                 "rfc":"`+rfc+`",
                 "nombre_contribuyente":"`+nombre_contribuyente+`",
                 "direccion":"`+direccion+`",
@@ -213,6 +214,43 @@ export class AuthService
     }
     `;
     this.url=environment.baseUrl+"api/services/usuarios/beProvider";
+    return this._http.post(this.url,param,{headers:headers});
+ }
+
+
+
+
+
+
+  /*Obtener Usuario*/
+  checkProveedor(token:string):Observable<any>
+  {
+    let headers = { "Accept": "application/json" };
+    this.url=environment.baseUrl+"api/services/usuarios/check_proveedor?token="+token;
+    return this._http.get(this.url,{headers:headers});
+  }
+
+
+
+
+
+  getInforProvider(token:string):Observable<any>
+ {
+    let headers = { "Accept": "application/json" };
+    let parametros=new FormData();
+    var param=`
+    {
+        "Request":
+        {
+            "body":
+            {
+                "token":"`+token+`"               
+            },
+            "auth":{"user":"`+environment.user+`","password":"`+environment.password+`"}
+        }
+    }
+    `;
+    this.url=environment.baseUrl+"api/services/usuarios/getDataProvider";
     return this._http.post(this.url,param,{headers:headers});
  }
 

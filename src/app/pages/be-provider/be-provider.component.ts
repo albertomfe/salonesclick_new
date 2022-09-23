@@ -46,6 +46,7 @@ export class BeProviderComponent implements OnInit {
   public id:number;
 
   /**formulario */
+  public regimen_fiscal:string;
   public rfc:string;
   public nombre_contribuyente:string;
   public direccion:string;
@@ -150,6 +151,7 @@ export class BeProviderComponent implements OnInit {
               this.apellido=this.info_user.user.apellidos;
               this.mail=this.info_user.user.mail;
               this.imagen=this.info_user.user.imagen;
+              this.getInfo();
             },
             error=>
             {
@@ -181,16 +183,17 @@ export class BeProviderComponent implements OnInit {
   {
 
     
+    let regimen_fiscal=this.regimen_fiscal||'';
     let rfc=this.rfc||'';
     let nombre_contribuyente=this.nombre_contribuyente||"";
     let direccion=this.direccion||""; 
     let numero_exterior=this.numero_exterior||""; 
-    let numero_interior=this.numero_interior||""; 
+    //let numero_interior=this.numero_interior||""; 
     let estado=this.estado||""; 
     let ciudad=this.ciudad||"";
 
 
-    if(rfc=="" || nombre_contribuyente=="" || direccion=="" || numero_exterior==""  || estado=="" || ciudad=="" )
+    if(regimen_fiscal=="" || rfc=="" || nombre_contribuyente=="" || direccion=="" || numero_exterior==""  || estado=="" || ciudad=="" )
     {
       this.crearMiToast(" Capture los Datos Porfavor ");
       this.desvanecerToast();
@@ -200,7 +203,7 @@ export class BeProviderComponent implements OnInit {
     {
       console.log('enviando la solicitud ....');
         //request
-        this._AuthService.beProviderService(this.id,this.rfc,this.nombre_contribuyente,this.direccion,this.numero_exterior,this.numero_interior,this.ciudad,this.estado,this.codigo_postal,this.curp).subscribe(
+        this._AuthService.beProviderService(this.id,this.rfc,this.nombre_contribuyente,this.direccion,this.numero_exterior,this.numero_interior,this.ciudad,this.estado,this.codigo_postal,this.curp,this.regimen_fiscal).subscribe(
           resultado=>{
             this.msg_error="";
             this.info_user=resultado||[];
@@ -209,7 +212,8 @@ export class BeProviderComponent implements OnInit {
             this.desvanecerToast();
             return 0;           
           },
-          error=>{
+          error=>
+          {
             this.crearMiToast("No pudo enviarse su solicitud,Comuniquese con el Administrador ");
             this.desvanecerToast();
             return 0;
@@ -218,13 +222,50 @@ export class BeProviderComponent implements OnInit {
 
 
     }
+  }//enviar
 
+
+    getInfo()
+    {
+
+      if(typeof(Storage)!=="undefined")
+      {
+        if(localStorage.getItem("user"))
+        {
+              var token=JSON.parse(localStorage.getItem("user"));
+              this._AuthService.getInforProvider(token).subscribe(
+                resultado=>{
+                console.log(resultado);
+
+                this.regimen_fiscal=resultado.items['result'][0]['regimen_fiscal'] || '';
+                this.rfc= resultado.items['result'][0]['rfc'] || '';
+                this.nombre_contribuyente= resultado.items['result'][0]['nombre_contribuyente'] || "";
+                this.direccion= resultado.items['result'][0]['direccion'] || ""; 
+                this.numero_exterior= resultado.items['result'][0]['numero_ext'] || ""; 
+                this.numero_interior= resultado.items['result'][0]['numero_int'] || ""; 
+                this.estado=resultado.items['result'][0]['estado'] || ""; 
+                this.ciudad=resultado.items['result'][0]['ciudad'] || "";
+            
+
+
+                },
+                error=>
+                {
+                  this.crearMiToast("No pudo enviarse su solicitud,Comuniquese con el Administrador ");
+                  this.desvanecerToast();
+                  return 0;
+                }
+              );
+
+        } 
+      }
+    }
 
       
 
 
 
-  }
+  
 
 
 
