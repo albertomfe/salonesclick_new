@@ -25,7 +25,25 @@ import { BookingsComponent } from './pages/account/bookings/bookings.component';
 import { PersonalInformationComponent } from './pages/account/personal-information/personal-information.component';
 import { PaymentMethodComponent } from './pages/account/payment-method/payment-method.component';
 import { NotificationsComponent } from './pages/account/notifications/notifications.component';
+import { SesionsComponent } from './pages/account/sesions/sesions.component';
+import { MySalesComponent } from './pages/account/my-sales/my-sales.component';
+
+import { ToolsComponent } from './pages/account/tools/tools.component';
+/**administracion de servicios dentro de la cuenta */
+import { LoungesComponent } from './pages/account/lounges/lounges.component';
+import { RatesComponent } from './pages/account/rates/rates.component';
+import { AllotmentLoungeComponent } from './pages/account/allotment-lounge/allotment-lounge.component';
+import { AllotmentServicesComponent } from './pages/account/allotment-services/allotment-services.component';
+import { ServicesComponent } from './pages/account/services/services.component';
+import { LoungeFoodComponent } from './pages/account/lounge-food/lounge-food.component';
+
+
+/**dashboard */
 import { BeProviderComponent } from './pages/be-provider/be-provider.component';
+
+
+
+
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -52,6 +70,18 @@ const routes: Routes = [
   {path:'PersonalInfo',component:PersonalInformationComponent},/**Informaciòn Personal*/
   {path:'PaymentMethod',component:PaymentMethodComponent},/**Metodo de Cobro*/
   {path:'Notifications',component:NotificationsComponent},/**Configurar que notificaciones desea recibir*/
+  {path:'Sessions',component:SesionsComponent},/**Registro de Sesiones*/
+  {path:'mySales',component:MySalesComponent},/**Mis Ventas Generadas*/
+  {path:'Tools',component:ToolsComponent},/**Herramientas para Proveedores*/
+  {path:'Lounges',component:LoungesComponent},/**Administracion de Salones*/
+  {path:'Rates',component:RatesComponent},/**Administracion de Tarifas de Salones*/
+  {path:'LoungeAllotment',component:AllotmentLoungeComponent},/**Disponibilidad de Salones*/
+  {path:'LoungeFood',component:LoungeFoodComponent},/**Platillos ofrecidos por salones de Salones*/
+  
+  /**servicios */
+  {path:'ServiceAllotment',component:AllotmentServicesComponent},/**Disponibilidad de Serviciios*/
+  {path:'Services',component:ServicesComponent},/**Administracion de Serviciios Ofrecidos*/
+
 
 
   {path:'**',component:NofoundComponent},

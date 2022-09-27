@@ -42,7 +42,7 @@
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a  routerLink="/DashBoard">  Gestionar Cuenta  </a></li>
-                                <li class="breadcrumb-item active" aria-current="page"> Preferencias & Notificaciones </li>
+                                <li class="breadcrumb-item active" aria-current="page"> Registro de Actividad </li>
                             </ol>
                         </nav>
                     </div>
@@ -56,7 +56,7 @@
                         
                         <div class="col-md-12">
                             <div class="alert alert-info alert-dismissible fade show" role="alert">                           
-                                <p class="lead text-center">Aquì puedes Indicarnos que es lo que quieres Recibir de Información para que te notifiquemos de cualquier actualización
+                                <p class="lead text-center">Aquì puedes ver las ultimas ubicaciones donde iniciaste sesiòn
                                 </p>
                                 <button  type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
@@ -65,45 +65,20 @@
                         </div>
                     </div>
                     <div class="card-body">
+                        <div class='col-md-12 text-center'>
+                            <span class="subtitulo_card fuente_titulo_provededor">REGISTRO DE ACTIVIDAD</span>
+                        </div>
                         
-                        <div class="col-md-12">                            
-                            <!-- Rounded switch -->
-                            <label class="switch">                                
-                                <input type="checkbox">
-                                <span class="slider round"></span>
-                            </label>
-                            <span class="text-white">&nbsp;&nbsp;¿Quieres Recibir Las Ultimas Novedades de Salones Click?</span>
-                        </div>
-
-
-                        <div class="col-md-12">                            
-                            <!-- Rounded switch -->
-                            <label class="switch">                                
-                                <input type="checkbox">
-                                <span class="slider round"></span>
-                            </label>
-                            <span class="text-white">&nbsp;&nbsp;¿Quieres Recibir Prómociones/Ofertas ?</span>
-                        </div>
-
-                        <div class="col-md-12">                            
-                            <!-- Rounded switch -->
-                            <label class="switch">                                
-                                <input type="checkbox">
-                                <span class="slider round"></span>
-                            </label>
-                            <span class="text-white">&nbsp;&nbsp;¿Quieres Recibir Ideas,Consejos y Tendencias para Tu Negocio ?</span>
-                        </div>
-
-
-                        <div class="col-md-12">                            
-                            <!-- Rounded switch -->
-                            <label class="switch">                                
-                                <input type="checkbox">
-                                <span class="slider round"></span>
-                            </label>
-                            <span class="text-white">&nbsp;&nbsp;¿Comentarios Sobre Tus Propiedades ?</span>
-                        </div>
-                       
+                        <ul class="list-unstyled">
+                            <li class="media my-4" *ngFor="let item of sessions;  let i = index;">
+                              <div class="media-body text-center">
+                                <h5 class="mt-0 mb-1 text_claro">{{item['sistema_operativo']}} </h5>
+                                <p class="text_claro"> {{item['ip']}}   {{item['navegador']}} </p>
+                                <p class="text_claro"> {{item['fecha']}}   </p>
+                                <hr class='hr' />
+                              </div>
+                            </li>
+                          </ul>
 
                     </div>
                     <div class="card-footer">

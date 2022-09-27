@@ -201,7 +201,7 @@ export class BeProviderComponent implements OnInit {
     }
     else
     {
-      console.log('enviando la solicitud ....');
+        //console.log('enviando la solicitud ....');
         //request
         this._AuthService.beProviderService(this.id,this.rfc,this.nombre_contribuyente,this.direccion,this.numero_exterior,this.numero_interior,this.ciudad,this.estado,this.codigo_postal,this.curp,this.regimen_fiscal).subscribe(
           resultado=>{

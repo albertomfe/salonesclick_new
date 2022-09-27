@@ -7,13 +7,14 @@ import { AuthService } from '../../../auth.service';
 import { environment } from '../../../../environments/environment';
 
 
+
 @Component({
-  selector: 'app-personal-information',
-  templateUrl: './personal-information.component.html',
-  styleUrls: ['./personal-information.component.css'],
+  selector: 'app-sesions',
+  templateUrl: './sesions.component.html',
+  styleUrls: ['./sesions.component.css'],
   providers:[AuthService],/*,ConstantesService*/
 })
-export class PersonalInformationComponent implements OnInit {
+export class SesionsComponent implements OnInit {
 
 
   public carga_pagina:boolean;
@@ -35,25 +36,16 @@ export class PersonalInformationComponent implements OnInit {
   public url:string;
   public id:number;
 
-  /*datos a mostrar ahora*/
-  public nombres:string;
-  public apellidos:string;
-  public sexo:string;
-  public direccion:string;
-  public contacto_emergencia:string;
-  public telefono_contacto:string;
 
-
-
-  
-
+  /*ultimas sesiones activas*/
+  public sessions:any;
 
   constructor(
     private _route: ActivatedRoute,
     private _router: Router,
     private _AuthService:AuthService,
-  ) 
-  { 
+  )
+  {
     this.url=environment.baseUrl;
     //carga template
     this.carga_pagina=true; 
@@ -63,14 +55,8 @@ export class PersonalInformationComponent implements OnInit {
     this.cargando=0;
     this.acceso=false;
     this.usuario_logeado=[ {name: "",mail:"",image:"" } ];
-
-    /**form */
-    this.nombres="";
-    this.apellidos="";
-    this.contacto_emergencia="";
-    this.telefono_contacto="";
-    this.sexo="Otro";
-
+    this.sessions = new Array();
+    /**form */  
     this.validar_token();
   }
 
@@ -120,7 +106,8 @@ export class PersonalInformationComponent implements OnInit {
     this._AuthService.getUser(token).subscribe(
       resultado=>{
         //console.log(resultado['items']['result']);
-        this.id=resultado['items']['result']||0;        
+        this.id=resultado['items']['result']||0;   
+        this.obtener_sesiones();     
       },
       error=>{}
     );
@@ -173,6 +160,22 @@ export class PersonalInformationComponent implements OnInit {
     }
   }//funcion de validacion
   
+
+
+  obtener_sesiones()
+  {
+      //request
+      this._AuthService.getSesions(this.id).subscribe(
+        resultado=>{
+          this.sessions=resultado['items']['result'];
+          console.log(this.sessions);
+        },
+        error=>{
+          this.sessions=[];
+        }
+      );
+
+  }
 
 
 }
